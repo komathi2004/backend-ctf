@@ -1,17 +1,7 @@
 const mongoose = require('mongoose');
-
-const userSchema = new mongoose.Schema({
-    teamid: String,
-    email: { type: String, unique: true },
+const UserSchema = new mongoose.Schema({
+    email: String,
     password: String,
-    username: { type: String, unique: true, sparse: true }  // sparse:true allows multiple nulls
-  });
-
-module.exports = mongoose.model('User', userSchema);
-
-
-
-
-
-
-
+    teamid: String
+});
+module.exports = mongoose.model('User', UserSchema);
